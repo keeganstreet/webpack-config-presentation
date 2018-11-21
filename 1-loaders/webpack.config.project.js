@@ -1,19 +1,19 @@
 const projectSpecificConfig = {
-	module: {
-		rules: [
-			{
-				test: /\.ts(x?)$/,
-				use: [
-					{
-						loader: 'cowsay-loader',
-						options: {
-							header: 'Moo DrupalSouth!'
-						}
-					}
-				]
-			}
-		]
-	},
+  module: {
+    rules: [
+      {
+        test: /\.ts(x?)$/,
+        use: [
+          {
+            loader: 'cowsay-loader',
+            options: {
+              header: 'Moo DrupalSouth!'
+            }
+          }
+        ]
+      }
+    ]
+  },
 };
 
 const merge = require('webpack-merge');

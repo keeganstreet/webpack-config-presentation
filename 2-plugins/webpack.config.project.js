@@ -1,28 +1,28 @@
 const webpack = require('webpack');
 
 const projectSpecificConfig = {
-	module: {
-		rules: [
-			{
-				test: /\.ts(x?)$/,
-				use: [
-					{
-						loader: 'cowsay-loader',
-						options: {
-							header: 'Moo DrupalSouth!'
-						}
-					},
-					'babel-loader',
-					'ts-loader'
-				]
-			}
-		]
-	},
-	plugins: [
-		new webpack.DefinePlugin({
-			'city': JSON.stringify('Canberra')
-		})
-	],
+  module: {
+    rules: [
+      {
+        test: /\.ts(x?)$/,
+        use: [
+          {
+            loader: 'cowsay-loader',
+            options: {
+              header: 'Moo DrupalSouth!'
+            }
+          },
+          'babel-loader',
+          'ts-loader'
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'city': JSON.stringify('Canberra')
+    })
+  ],
 };
 
 const merge = require('webpack-merge');
