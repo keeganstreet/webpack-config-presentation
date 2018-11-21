@@ -1,3 +1,5 @@
+const util = require('util');
+
 module.exports = (object) => {
 	const { module, plugins } = object;
 	const loggedObject = {};
@@ -7,5 +9,5 @@ module.exports = (object) => {
 	if (plugins) {
 		loggedObject.plugins = plugins;
 	}
-	console.dir(loggedObject, { depth: null });
+	console.log(util.inspect(loggedObject, { depth: null, colors: true, compact: false }));
 }
