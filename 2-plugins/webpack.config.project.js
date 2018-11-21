@@ -1,6 +1,9 @@
 const webpack = require('webpack');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.config');
+const log = require('./log-object');
 
-const projectSpecificConfig = {
+const projectConfig = {
   module: {
     rules: [
       {
@@ -25,11 +28,8 @@ const projectSpecificConfig = {
   ],
 };
 
-const merge = require('webpack-merge');
-const reusableConfig = require('./webpack.config');
-const log = require('./log-object');
-
-const mergedConfig = merge.smart(reusableConfig, projectSpecificConfig);
+const mergedConfig = merge.smart(
+  baseConfig, projectConfig);
 
 log(mergedConfig);
 

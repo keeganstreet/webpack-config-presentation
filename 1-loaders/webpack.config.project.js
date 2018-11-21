@@ -1,26 +1,20 @@
-const projectSpecificConfig = {
+const log = require('./log-object');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.config');
+
+const projectConfig = {
   module: {
     rules: [
       {
         test: /\.ts(x?)$/,
-        use: [
-          {
-            loader: 'cowsay-loader',
-            options: {
-              header: 'Moo DrupalSouth!'
-            }
-          }
-        ]
+        use: []
       }
     ]
   },
 };
 
-const merge = require('webpack-merge');
-const reusableConfig = require('./webpack.config');
-const log = require('./log-object');
-
-const mergedConfig = merge.smart(reusableConfig, projectSpecificConfig);
+const mergedConfig = merge.smart(
+  baseConfig, projectConfig);
 
 log(mergedConfig);
 
