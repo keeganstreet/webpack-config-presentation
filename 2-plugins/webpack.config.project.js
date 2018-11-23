@@ -25,7 +25,7 @@ const projectConfig = {
     new webpack.DefinePlugin({
       'city': JSON.stringify('Canberra')
     })
-  ],
+  ]
 };
 
 const mergedConfig = merge.smart(

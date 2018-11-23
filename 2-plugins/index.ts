@@ -3,8 +3,14 @@ interface Person {
   lastName: string;
 }
 
+declare const conference: string;
+declare const city: string;
+
 const greet = (person: Person) => {
-  return `Hello, ${person.firstName} ${person.lastName}`;
+  return `
+    Hello, ${person.firstName} ${person.lastName}.
+    I hope you're enjoying ${conference} in ${city}!
+  `;
 };
 
 let user = {
@@ -13,7 +19,3 @@ let user = {
 };
 
 document.body.innerHTML = greet(user);
-
-declare const conference;
-declare const city;
-console.log(conference, city);
